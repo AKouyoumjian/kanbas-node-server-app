@@ -6,7 +6,7 @@ import cors from "cors";
 import CourseRoutes from "./courses/routes.js";
 import ModuleRoutes from "./modules/routes.js";
 import AssignmentRoutes from "./assignments/routes.js";
-import "dotenv/config";
+import dotenv from "dotenv";
 import session from "express-session";
 
 const app = express();
@@ -21,5 +21,7 @@ CourseRoutes(app);
 AssignmentRoutes(app);
 Lab5(app);
 HelloRoutes(app);
+
+dotenv.config();
 
 app.listen(process.env.PORT || 4000);
