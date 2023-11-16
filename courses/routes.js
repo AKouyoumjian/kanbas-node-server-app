@@ -1,4 +1,4 @@
-import Database from "../Database/index.js";
+import Database from "../database/index.js";
 function CourseRoutes(app) {
   app.post("/api/courses", (req, res) => {
     const course = { ...req.body, _id: new Date().getTime().toString()};

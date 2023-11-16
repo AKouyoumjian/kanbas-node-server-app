@@ -1,4 +1,4 @@
-import db from "../Database/index.js";
+import db from "../database/index.js";
 
 function AssignmentRoutes(app) {
   app.get("/api/assignments", (req, res) => {
