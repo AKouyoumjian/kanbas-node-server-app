@@ -24,4 +24,5 @@ HelloRoutes(app);
 
 dotenv.config();
 
+// listen on the port or default to 4000
 app.listen(process.env.PORT || 4000);
