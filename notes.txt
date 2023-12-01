@@ -1,0 +1,7 @@
+Start mongod:
+
+in command line any folder (do in root):
+
+source ~/.bash_profile
+
+mongod --dbpath ~/mongodb_data
