@@ -51,7 +51,6 @@ function UserRoutes(app) {
       req.session["currentUser"] = currentUser;
       res.json(currentUser);
     } else {
-      console.log("error signing in");
       res.sendStatus(403);
     }
   };
