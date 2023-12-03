@@ -1,4 +1,4 @@
-Start mongod:
+Start mongod locally:
 
 in command line any folder (do in root):
 
