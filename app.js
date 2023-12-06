@@ -17,6 +17,7 @@ mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 
+const allowedOrigins = ["https://a5--frabjous-mochi-2114eb.netlify.app/", process.env.FRONTEND_URL];
 const corsOptions = {
   credentials: true,
   origin: (origin, callback) => {
