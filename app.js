@@ -17,12 +17,24 @@ mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 
-app.use(
-  cors({
-    credentials: true,
-    origin: process.env.FRONTEND_URL,
-  })
-);
+const corsOptions = {
+  credentials: true,
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+app.use(cors(corsOptions));
+
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: process.env.FRONTEND_URL,
+//   })
+// );
 const sessionOptions = {
   secret: "any string",
   resave: false,
