@@ -17,25 +17,25 @@ mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 
-const allowedOrigins = ["https://a5--frabjous-mochi-2114eb.netlify.app/", process.env.FRONTEND_URL];
-const corsOptions = {
-  credentials: true,
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
-app.use(cors(corsOptions));
+// const allowedOrigins = ["https://a5--frabjous-mochi-2114eb.netlify.app/", process.env.FRONTEND_URL];
+// const corsOptions = {
+//   credentials: true,
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
+// app.use(cors(corsOptions));
 
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: process.env.FRONTEND_URL,
-//   })
-// );
+app.use(
+  cors({
+    credentials: true,
+    origin: process.env.FRONTEND_URL,
+  })
+);
 const sessionOptions = {
   secret: "any string",
   resave: false,
